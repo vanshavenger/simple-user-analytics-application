@@ -29,7 +29,10 @@ app.use(limiter);
 
 const allowedOrigins = [
   'https://simple-user-analytics-application-f.vercel.app',
-  'https://analytics.dsandev.in'
+  'https://analytics.dsandev.in',
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://127.0.0.1:5500' 
 ];
 
 app.use(cors({
@@ -41,6 +44,7 @@ app.use(cors({
     }
   }
 }));
+
 app.use(express.json());
 
 app.use('/api/events', eventsRouter);
