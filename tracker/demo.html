@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Page - Analytics Tracker</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; min-height: 100vh; background: #f5f5f5; }
+    header { background: #333; color: white; padding: 20px; text-align: center; }
+    main { max-width: 800px; margin: 40px auto; padding: 20px; }
+    .card { background: white; border-radius: 8px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .card h2 { margin-bottom: 12px; color: #333; }
+    .card p { color: #666; line-height: 1.6; }
+    .btn { display: inline-block; padding: 12px 24px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin: 8px 8px 8px 0; }
+    .btn:hover { background: #45a049; }
+    .btn-blue { background: #2196F3; }
+    .btn-blue:hover { background: #1976D2; }
+    .btn-red { background: #f44336; }
+    .btn-red:hover { background: #d32f2f; }
+    nav { display: flex; gap: 20px; justify-content: center; padding: 16px; background: #eee; }
+    nav a { color: #333; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #4CAF50; }
+    footer { text-align: center; padding: 20px; color: #999; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Analytics Demo Page</h1>
+    <p>Click around to generate tracking events!</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Products</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>This is a demo page to test the analytics tracking script. Every page view and click is being tracked and sent to the backend API.</p>
+    </div>
+
+    <div class="card">
+      <h2>Interactive Elements</h2>
+      <p>Click these buttons to generate click events:</p>
+      <br />
+      <button class="btn">Sign Up</button>
+      <button class="btn btn-blue">Learn More</button>
+      <button class="btn btn-red">Delete Account</button>
+    </div>
+
+    <div class="card">
+      <h2>More Content</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Click anywhere on this page to track positions for the heatmap.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Analytics Demo &copy; 2024</p>
+  </footer>
+
+  <script src="dist/tracker.js"></script>
+</body>
+</html>
