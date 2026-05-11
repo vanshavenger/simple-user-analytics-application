@@ -12,7 +12,9 @@ const MONGODB_URI = process.env.MONGODB_URI!;
 
 app.set('trust proxy', 1);
 
-app.use(helmet());
+app.use(helmet({
+  crossOriginResourcePolicy: false,
+}));
 
 app.use(compression());
 
