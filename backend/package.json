@@ -6,11 +6,15 @@
     "start": "bun run src/server.ts"
   },
   "dependencies": {
+    "compression": "^1.8.1",
     "cors": "2.8.6",
     "express": "5.2.1",
+    "express-rate-limit": "^8.5.1",
+    "helmet": "^8.1.0",
     "mongoose": "9.6.2"
   },
   "devDependencies": {
+    "@types/compression": "^1.8.1",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0"
   }
