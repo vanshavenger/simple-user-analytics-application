@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from './ui/
 import { Badge } from './ui/badge';
 import { Radio, Eye, MousePointerClick, Clock, Tag, Wifi, WifiOff } from 'lucide-react';
 
-const SSE_URL = import.meta.env.DEV ? 'http://localhost:5000/api/events/stream' : '/api/events/stream';
+const SSE_URL = import.meta.env.DEV ? 'http://localhost:5000/api/events/stream' : `${import.meta.env.VITE_API_BASE_URL || ''}/api/events/stream`;
 const MAX_EVENTS = 50;
 
 function LiveFeed() {

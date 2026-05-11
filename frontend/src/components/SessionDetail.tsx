@@ -7,7 +7,7 @@ import { Button } from './ui/button';
 import { ArrowLeft, Eye, MousePointerClick, Clock, BarChart3, Download, Monitor, Tag } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Cell, PieChart, Pie } from 'recharts';
 
-const API_BASE = import.meta.env.DEV ? 'http://localhost:5000' : '';
+const API_BASE = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_BASE_URL || '';
 
 interface Props {
   sessionId: string;

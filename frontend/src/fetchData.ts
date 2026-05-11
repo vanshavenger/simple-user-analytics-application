@@ -1,14 +1,18 @@
 const cache = new Map<string, Promise<unknown>>();
 
+const API_BASE = import.meta.env.DEV ? '' : import.meta.env.VITE_API_BASE_URL || '';
+
 export function fetchData<T>(url: string): Promise<T> {
-  if (!cache.has(url)) {
-    cache.set(url, fetch(url).then(res => res.json()));
+  const fullUrl = url.startsWith('/api') && API_BASE ? `${API_BASE}${url}` : url;
+  if (!cache.has(fullUrl)) {
+    cache.set(fullUrl, fetch(fullUrl).then(res => res.json()));
   }
-  return cache.get(url) as Promise<T>;
+  return cache.get(fullUrl) as Promise<T>;
 }
 
 export function invalidate(url: string) {
-  cache.delete(url);
+  const fullUrl = url.startsWith('/api') && API_BASE ? `${API_BASE}${url}` : url;
+  cache.delete(fullUrl);
 }
 
 export function invalidateAll() {

@@ -9,7 +9,7 @@ import { Button } from './ui/button';
 import { Users, Clock, ChevronRight, Hash, Activity, Download } from 'lucide-react';
 import type { DateRange } from './DateRangeFilter';
 
-const API_BASE = import.meta.env.DEV ? 'http://localhost:5000' : '';
+const API_BASE = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_BASE_URL || '';
 
 function buildSessionsUrl(dateRange: DateRange): string {
   const params = new URLSearchParams();
